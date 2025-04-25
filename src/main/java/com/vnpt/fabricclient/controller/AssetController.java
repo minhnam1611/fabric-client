@@ -15,7 +15,7 @@ public class AssetController {
 
     @PostMapping("/init-data")
     public String createInitAsset() throws Exception {
-        return fabricService.initData();
+        return fabricService.initListAsset();
     }
 
     @PostMapping
