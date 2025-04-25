@@ -12,6 +12,12 @@ public class AssetController {
     @Autowired
     private FabricService fabricService;
 
+
+    @PostMapping("/init-data")
+    public String createInitAsset() throws Exception {
+        return fabricService.initData();
+    }
+
     @PostMapping
     public String createAsset(@RequestBody Asset asset) throws Exception {
         return fabricService.createAsset(asset);

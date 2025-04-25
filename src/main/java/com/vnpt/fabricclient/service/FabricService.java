@@ -14,6 +14,12 @@ import java.util.List;
 public class FabricService {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
+    public String initData() throws Exception {
+        Contract contract = FabricClient.getContract();
+        byte[] result = contract.submitTransaction("InitLedger");
+        return "success";
+    }
+
     public String createAsset(Asset asset) throws Exception {
         Contract contract = FabricClient.getContract();
         byte[] result = contract.submitTransaction("CreateAsset",
